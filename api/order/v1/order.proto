@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package stream;
+
+option go_package = "../../../internal/proto";
+
+message PickUpReq {
+  int64 DeviceId = 1;
+  string PickupCode = 2;
+}
+
+message PickUpResp {
+  double overtime_fee = 1; // 超时费用
+}
+
+message CreateOrderReq {
+  int64 DeviceId = 1;
+  string OrderCode = 2;
+  string Phone = 3;
+}
+
+message CreateOrderResp {
+  string PickupCode = 1;
+  string OrderCode = 2;
+}
+
+message OrderListReq {
+  int64 userId = 1;
+}
+message OrderListResp {
+  repeated OrderList list = 1;
+}
+message OrderList {
+
+}
+
+message OrderDetailReq {
+
+}
+message OrderDetailResp {
+
+}
+service Order {
+  rpc PickUp(PickUpReq) returns (PickUpResp);//取件
+  rpc CreateOrder(CreateOrderReq) returns (CreateOrderResp);//创建订单
+  rpc OrderList(OrderListReq) returns (OrderListResp);//订单列表
+}

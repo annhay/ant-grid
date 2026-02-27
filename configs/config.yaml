@@ -1,0 +1,24 @@
+# mysql 服务配置
+Mysql:
+  Host: "14.103.173.254"
+  Port: 3306
+  User: "root"
+  Password: "a93abe0beb4bfc8767596e16461b1ab6"
+  Database: "ant-grid"
+# redis 服务配置
+Redis:
+  Host: "14.103.173.254"
+  Port: 6379
+  Password: "a93abe0beb4bfc8767596e16461b1ab6"
+  DB: 1
+#互亿第三方短信平台
+Huyi:
+  APIID: "C32660721"
+  APIKEY: "5a9b8ef9e6ae7a0188f9f0c1ecf3129b"
+# zap 日志配置
+Zap:
+  LogDir: "internal/logger"
+  MaxAge: 7
+  Compress: false
+  Level: "info"
+  Development: false
